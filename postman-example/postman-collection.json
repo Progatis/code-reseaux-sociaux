@@ -1,0 +1,300 @@
+{
+  "info": {
+    "name": "API Démo",
+    "description": "Collection de requêtes pour démo de Postman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Accueil",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        },
+        "description": "Page d'accueil de l'API"
+      },
+      "response": []
+    },
+    {
+      "name": "Utilisateurs",
+      "item": [
+        {
+          "name": "Tous les utilisateurs",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            },
+            "description": "Récupérer tous les utilisateurs"
+          },
+          "response": []
+        },
+        {
+          "name": "Utilisateur par ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/users/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "1"]
+            },
+            "description": "Récupérer un utilisateur spécifique par son ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Créer un utilisateur",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users"]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jean Dupont\",\n  \"email\": \"jean@example.com\",\n  \"role\": \"user\"\n}"
+            },
+            "description": "Créer un nouvel utilisateur"
+          },
+          "response": []
+        },
+        {
+          "name": "Mettre à jour un utilisateur",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:3000/api/users/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "1"]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice Martin\",\n  \"email\": \"alice.martin@example.com\"\n}"
+            },
+            "description": "Mettre à jour un utilisateur existant"
+          },
+          "response": []
+        },
+        {
+          "name": "Supprimer un utilisateur",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/users/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "users", "2"]
+            },
+            "description": "Supprimer un utilisateur par son ID"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produits",
+      "item": [
+        {
+          "name": "Tous les produits",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/products",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products"]
+            },
+            "description": "Récupérer tous les produits"
+          },
+          "response": []
+        },
+        {
+          "name": "Produit par ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3000/api/products/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products", "1"]
+            },
+            "description": "Récupérer un produit spécifique par son ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Créer un produit",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3000/api/products",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products"]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Tablette\",\n  \"price\": 299,\n  \"stock\": 75\n}"
+            },
+            "description": "Créer un nouveau produit"
+          },
+          "response": []
+        },
+        {
+          "name": "Mettre à jour un produit",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:3000/api/products/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products", "1"]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 649,\n  \"stock\": 75\n}"
+            },
+            "description": "Mettre à jour un produit existant"
+          },
+          "response": []
+        },
+        {
+          "name": "Supprimer un produit",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3000/api/products/3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products", "3"]
+            },
+            "description": "Supprimer un produit par son ID"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authentification",
+      "item": [
+        {
+          "name": "Login (succès)",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "login"]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"demo@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "description": "Connexion avec identifiants valides"
+          },
+          "response": []
+        },
+        {
+          "name": "Login (échec)",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "login"]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"wrong@example.com\",\n  \"password\": \"wrongpassword\"\n}"
+            },
+            "description": "Connexion avec identifiants invalides"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Recherche",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/search?q=alice",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "search"],
+          "query": [
+            {
+              "key": "q",
+              "value": "alice"
+            }
+          ]
+        },
+        "description": "Rechercher dans les utilisateurs et produits"
+      },
+      "response": []
+    }
+  ]
+} 
