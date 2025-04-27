@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Button + spinner</title>
+
+    <style>
+      body {
+        background-color: green;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+
+      }
+
+      .button {
+        position: relative;
+        background: #b4a8d3;
+        color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding: 1rem 2.5rem;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 220px;
+        box-shadow: 0 6px 12px rgba(180, 168, 211, 0.4);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+
+      }
+
+      .button:hover {
+        background: #d6d5ec;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(214, 213, 236, 0.5);
+
+      }
+
+      .button:active {
+        transform: scale(0.97);
+        box-shadow: 0 4px 10px rgba(180, 168, 211, 0.3);
+
+      }
+
+      .button.loading {
+        min-width: 64px;
+        padding: 1rem;
+        border-radius: 50%;
+        background: #b4a8d3;
+
+      }
+
+      .button-content {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+      }
+
+      .button-content svg {
+        width: 22px;
+        height: 22px;
+        stroke: white;
+        fill: none;
+        stroke-width: 2.5;
+
+      }
+
+      .spinner {
+        width: 24px;
+        height: 24px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid white;
+        border-radius: 50%;
+        animation: spin 1s ease infinite;
+
+      }
+
+      .checkmark {
+        width: 32px;
+        height: 32px;
+        stroke: white;
+        stroke-width: 3;
+        stroke-linecap: round;
+        fill: none;
+        stroke-dasharray: 50;
+        stroke-dashoffset: 50;
+        animation: draw 0.6s forwards ease-out, pop 0.6s forwards ease-out;
+
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+
+      }
+
+      @keyframes draw {
+        to { stroke-dashoffset: 0; }
+
+      }
+
+      @keyframes pop {
+        0% { transform: scale(0.6); opacity: 0; }
+        80% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(1); }
+
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <button class="button" onclick="handleClick(this)">
+      <span class="button-content">
+        <svg viewBox="0 0 24 24">
+          <path d="M22 2L11 13" />
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+        </svg>
+        Envoyer
+      </span>
+    </button>
+
+    <script>
+      function handleClick(button) {
+        button.classList.add('loading');
+        button.innerHTML = '<div class="spinner"></div>';
+
+        setTimeout(() => {
+          button.innerHTML = `
+            <svg class="checkmark" viewBox="0 0 24 24">
+              <polyline points="20 6 10 17 4 12" />
+            </svg>
+          `
+        }, 2200)
+      }
+    </script>
+
+  </body>
+
+</html>
